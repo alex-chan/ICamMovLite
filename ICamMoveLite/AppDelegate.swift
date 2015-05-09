@@ -16,6 +16,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+//        ShareSDK.registerApp("5b09c977b07c")
+//        
+//        ShareSDK.connectSinaWeiboWithAppKey("1646769844", appSecret: "057deedfe77f7bea1a7c19f345e3318e", redirectUri: "https://icammov.parseapp.com/wb_oauthcallback", weiboSDKCls: WeiboSDK.self)
+//        
+//        ShareSDK.connectWeChatSessionWithAppId("wx9c1cecdd1a83f239", appSecret: "68f9a0608ccaaac148c9a5456989c2d4", wechatCls: WXApi.self)
+//        ShareSDK.connectWeChatTimelineWithAppId("wx9c1cecdd1a83f239", appSecret: "68f9a0608ccaaac148c9a5456989c2d4", wechatCls: WXApi.self)
+//        
+
+        LPVideo.registerSubclass()
+        LPUser.registerSubclass()
+        LPComment.registerSubclass()
+        AVOSCloud.setApplicationId("xkjj8zwzxiyouqo4m3war047dy40nfw0axxr10s0d85e6a9d", clientKey: "20toct9i8jnyl7eperpl7o66puy9s2bzr70h2dq0rkoqvgt7")
+        
+        //        AVOSCloud.setenv("LOG_CURL", "YES", 0)
+        
+        AVCloud.setProductionMode(IS_PRODUCTION_ENV)
         return true
     }
 

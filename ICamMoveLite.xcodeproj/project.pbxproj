@@ -7,12 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB0633511AFC5C8C0007E10F /* SVPlayPauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0633501AFC5C8C0007E10F /* SVPlayPauseView.swift */; };
 		CB0797121AF766CB00510D5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0797111AF766CB00510D5F /* AppDelegate.swift */; };
-		CB0797141AF766CB00510D5F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0797131AF766CB00510D5F /* ViewController.swift */; };
+		CB0797141AF766CB00510D5F /* TakeMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0797131AF766CB00510D5F /* TakeMovieViewController.swift */; };
 		CB0797171AF766CB00510D5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB0797151AF766CB00510D5F /* Main.storyboard */; };
-		CB0797191AF766CB00510D5F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB0797181AF766CB00510D5F /* Images.xcassets */; };
 		CB07971C1AF766CB00510D5F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB07971A1AF766CB00510D5F /* LaunchScreen.xib */; };
 		CB0797281AF766CB00510D5F /* ICamMoveLiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0797271AF766CB00510D5F /* ICamMoveLiteTests.swift */; };
+		CB07973D1AF7694500510D5F /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB07973A1AF768D300510D5F /* GPUImage.framework */; };
+		CB4C41681AFDA54C0065A02A /* SVImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4C41671AFDA54C0065A02A /* SVImagesView.swift */; };
+		CB5121B61AFA59CA00A755AE /* SVImagesLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5121B51AFA59CA00A755AE /* SVImagesLayer.swift */; };
+		CBC1069A1AF76AFE006347FD /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CB07973A1AF768D300510D5F /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CBC1069C1AF76E01006347FD /* EditMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC1069B1AF76E01006347FD /* EditMovieViewController.swift */; };
+		CBC1069F1AF76E47006347FD /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC1069D1AF76E47006347FD /* FilterCollectionViewCell.swift */; };
+		CBC106A01AF76E47006347FD /* FilterCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC1069E1AF76E47006347FD /* FilterCollectionViewController.swift */; };
+		CBC106A21AF76EBD006347FD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBC106A11AF76EBD006347FD /* Images.xcassets */; };
+		CBC106A41AF76EDA006347FD /* ShareMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC106A31AF76EDA006347FD /* ShareMovieViewController.swift */; };
+		CBC106AA1AF76F21006347FD /* BorderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC106A61AF76F21006347FD /* BorderTextView.swift */; };
+		CBC106AB1AF76F21006347FD /* FiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC106A71AF76F21006347FD /* FiltersView.swift */; };
+		CBC106AC1AF76F21006347FD /* MyImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC106A81AF76F21006347FD /* MyImageButton.swift */; };
+		CBC106AD1AF76F21006347FD /* MyScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC106A91AF76F21006347FD /* MyScrollView.swift */; };
+		CBC106B71AF77056006347FD /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC106B41AF77056006347FD /* Model.swift */; };
+		CBC106B81AF77056006347FD /* MyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC106B51AF77056006347FD /* MyExtensions.swift */; };
+		CBC106B91AF77056006347FD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC106B61AF77056006347FD /* Constants.swift */; };
+		CBC106C51AF777AF006347FD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC106C41AF777AF006347FD /* SystemConfiguration.framework */; };
+		CBC106C71AF777B8006347FD /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC106C61AF777B8006347FD /* MobileCoreServices.framework */; };
+		CBC106C91AF777C0006347FD /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC106C81AF777C0006347FD /* CoreTelephony.framework */; };
+		CBC106CB1AF777C7006347FD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC106CA1AF777C7006347FD /* CoreLocation.framework */; };
+		CBC106CD1AF777CF006347FD /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC106CC1AF777CF006347FD /* libicucore.dylib */; };
+		CBC106CF1AF778BD006347FD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC106CE1AF778BD006347FD /* CFNetwork.framework */; };
+		CBC106D61AF77B86006347FD /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC106D51AF77B86006347FD /* AVOSCloud.framework */; };
+		CBC106FC1AF77D74006347FD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC106FB1AF77D74006347FD /* QuartzCore.framework */; };
+		CBC107001AF77D97006347FD /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC106FF1AF77D97006347FD /* libz.1.2.5.dylib */; };
+		CBC107021AF77DA3006347FD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC107011AF77DA3006347FD /* Security.framework */; };
+		CBC107041AF77DB0006347FD /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC107031AF77DB0006347FD /* ImageIO.framework */; };
+		CBC107271AF7817B006347FD /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC107261AF7817B006347FD /* Utils.swift */; };
+		CBC107291AF781AE006347FD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC107281AF781AE006347FD /* AVFoundation.framework */; };
+		CBC1077D1AF7C52C006347FD /* AudioMixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC1077C1AF7C52C006347FD /* AudioMixViewController.swift */; };
+		CBEF47C31AF8C0D50087762C /* SVControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF47C21AF8C0D50087762C /* SVControlView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,19 +54,85 @@
 			remoteGlobalIDString = CB07970B1AF766CB00510D5F;
 			remoteInfo = ICamMoveLite;
 		};
+		CB0797371AF768D300510D5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB0797311AF768D300510D5F /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
+			remoteInfo = GPUImage;
+		};
+		CB0797391AF768D300510D5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB0797311AF768D300510D5F /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCE209E51943F20C002FEED8;
+			remoteInfo = GPUImageFramework;
+		};
+		CB07973B1AF7692500510D5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB0797311AF768D300510D5F /* GPUImage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCE209E41943F20C002FEED8;
+			remoteInfo = GPUImageFramework;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CB07973E1AF76AC100510D5F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CBC1069A1AF76AFE006347FD /* GPUImage.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		CB0633501AFC5C8C0007E10F /* SVPlayPauseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SVPlayPauseView.swift; path = SunsetVideoPlayEdit/SVPlayPauseView.swift; sourceTree = "<group>"; };
 		CB07970C1AF766CB00510D5F /* ICamMoveLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICamMoveLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB0797101AF766CB00510D5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB0797111AF766CB00510D5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CB0797131AF766CB00510D5F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CB0797131AF766CB00510D5F /* TakeMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeMovieViewController.swift; sourceTree = "<group>"; };
 		CB0797161AF766CB00510D5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CB0797181AF766CB00510D5F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CB07971B1AF766CB00510D5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CB0797211AF766CB00510D5F /* ICamMoveLiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ICamMoveLiteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB0797261AF766CB00510D5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB0797271AF766CB00510D5F /* ICamMoveLiteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICamMoveLiteTests.swift; sourceTree = "<group>"; };
+		CB0797311AF768D300510D5F /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = "../../../../../../Volumes/AppleData/Resources/open source code/GPUImage-0.1.6/framework/GPUImage.xcodeproj"; sourceTree = "<group>"; };
+		CB4C41671AFDA54C0065A02A /* SVImagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SVImagesView.swift; path = SunsetVideoPlayEdit/SVImagesView.swift; sourceTree = "<group>"; };
+		CB5121B51AFA59CA00A755AE /* SVImagesLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SVImagesLayer.swift; path = SunsetVideoPlayEdit/SVImagesLayer.swift; sourceTree = "<group>"; };
+		CBC1069B1AF76E01006347FD /* EditMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditMovieViewController.swift; sourceTree = "<group>"; };
+		CBC1069D1AF76E47006347FD /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		CBC1069E1AF76E47006347FD /* FilterCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewController.swift; sourceTree = "<group>"; };
+		CBC106A11AF76EBD006347FD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CBC106A31AF76EDA006347FD /* ShareMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareMovieViewController.swift; sourceTree = "<group>"; };
+		CBC106A61AF76F21006347FD /* BorderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderTextView.swift; sourceTree = "<group>"; };
+		CBC106A71AF76F21006347FD /* FiltersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersView.swift; sourceTree = "<group>"; };
+		CBC106A81AF76F21006347FD /* MyImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyImageButton.swift; sourceTree = "<group>"; };
+		CBC106A91AF76F21006347FD /* MyScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScrollView.swift; sourceTree = "<group>"; };
+		CBC106B41AF77056006347FD /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		CBC106B51AF77056006347FD /* MyExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyExtensions.swift; sourceTree = "<group>"; };
+		CBC106B61AF77056006347FD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CBC106C41AF777AF006347FD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CBC106C61AF777B8006347FD /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		CBC106C81AF777C0006347FD /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		CBC106CA1AF777C7006347FD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CBC106CC1AF777CF006347FD /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		CBC106CE1AF778BD006347FD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		CBC106D41AF77A03006347FD /* bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridge.h; sourceTree = "<group>"; };
+		CBC106D51AF77B86006347FD /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVOSCloud.framework; path = Frameworks/AVOSCloud.framework; sourceTree = "<group>"; };
+		CBC106FB1AF77D74006347FD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CBC106FF1AF77D97006347FD /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		CBC107011AF77DA3006347FD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		CBC107031AF77DB0006347FD /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		CBC107261AF7817B006347FD /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		CBC107281AF781AE006347FD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		CBC1072B1AF7823C006347FD /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVOSCloud.framework; path = Frameworks/AVOSCloud.framework; sourceTree = "<group>"; };
+		CBC1077C1AF7C52C006347FD /* AudioMixViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioMixViewController.swift; sourceTree = "<group>"; };
+		CBEF47C21AF8C0D50087762C /* SVControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SVControlView.swift; path = SunsetVideoPlayEdit/SVControlView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +140,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBC106D61AF77B86006347FD /* AVOSCloud.framework in Frameworks */,
+				CBC107291AF781AE006347FD /* AVFoundation.framework in Frameworks */,
+				CBC107041AF77DB0006347FD /* ImageIO.framework in Frameworks */,
+				CBC107021AF77DA3006347FD /* Security.framework in Frameworks */,
+				CBC107001AF77D97006347FD /* libz.1.2.5.dylib in Frameworks */,
+				CBC106CD1AF777CF006347FD /* libicucore.dylib in Frameworks */,
+				CBC106C91AF777C0006347FD /* CoreTelephony.framework in Frameworks */,
+				CBC106FC1AF77D74006347FD /* QuartzCore.framework in Frameworks */,
+				CBC106CF1AF778BD006347FD /* CFNetwork.framework in Frameworks */,
+				CBC106CB1AF777C7006347FD /* CoreLocation.framework in Frameworks */,
+				CBC106C71AF777B8006347FD /* MobileCoreServices.framework in Frameworks */,
+				CBC106C51AF777AF006347FD /* SystemConfiguration.framework in Frameworks */,
+				CB07973D1AF7694500510D5F /* GPUImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +166,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		070131C4B288321A3161444F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CBC1072B1AF7823C006347FD /* AVOSCloud.framework */,
+				CBC107281AF781AE006347FD /* AVFoundation.framework */,
+				CBC107031AF77DB0006347FD /* ImageIO.framework */,
+				CBC107011AF77DA3006347FD /* Security.framework */,
+				CBC106FF1AF77D97006347FD /* libz.1.2.5.dylib */,
+				CBC106FB1AF77D74006347FD /* QuartzCore.framework */,
+				CBC106D51AF77B86006347FD /* AVOSCloud.framework */,
+				CBC106CE1AF778BD006347FD /* CFNetwork.framework */,
+				CBC106CC1AF777CF006347FD /* libicucore.dylib */,
+				CBC106CA1AF777C7006347FD /* CoreLocation.framework */,
+				CBC106C81AF777C0006347FD /* CoreTelephony.framework */,
+				CBC106C61AF777B8006347FD /* MobileCoreServices.framework */,
+				CBC106C41AF777AF006347FD /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CB0797031AF766CA00510D5F = {
 			isa = PBXGroup;
 			children = (
+				CB0797311AF768D300510D5F /* GPUImage.xcodeproj */,
 				CB07970E1AF766CB00510D5F /* ICamMoveLite */,
 				CB0797241AF766CB00510D5F /* ICamMoveLiteTests */,
 				CB07970D1AF766CB00510D5F /* Products */,
+				070131C4B288321A3161444F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,12 +209,21 @@
 		CB07970E1AF766CB00510D5F /* ICamMoveLite */ = {
 			isa = PBXGroup;
 			children = (
+				CBEF47BF1AF8C02B0087762C /* SVEditor */,
+				CBC106B31AF7703B006347FD /* Utils */,
+				CBC106A51AF76F21006347FD /* UI */,
+				CBC1069D1AF76E47006347FD /* FilterCollectionViewCell.swift */,
+				CBC1069E1AF76E47006347FD /* FilterCollectionViewController.swift */,
+				CBC1077C1AF7C52C006347FD /* AudioMixViewController.swift */,
 				CB0797111AF766CB00510D5F /* AppDelegate.swift */,
-				CB0797131AF766CB00510D5F /* ViewController.swift */,
+				CB0797131AF766CB00510D5F /* TakeMovieViewController.swift */,
+				CBC1069B1AF76E01006347FD /* EditMovieViewController.swift */,
+				CBC106A31AF76EDA006347FD /* ShareMovieViewController.swift */,
 				CB0797151AF766CB00510D5F /* Main.storyboard */,
-				CB0797181AF766CB00510D5F /* Images.xcassets */,
 				CB07971A1AF766CB00510D5F /* LaunchScreen.xib */,
+				CBC106A11AF76EBD006347FD /* Images.xcassets */,
 				CB07970F1AF766CB00510D5F /* Supporting Files */,
+				CBC106D41AF77A03006347FD /* bridge.h */,
 			);
 			path = ICamMoveLite;
 			sourceTree = "<group>";
@@ -112,6 +253,48 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		CB0797321AF768D300510D5F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB0797381AF768D300510D5F /* libGPUImage.a */,
+				CB07973A1AF768D300510D5F /* GPUImage.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CBC106A51AF76F21006347FD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CBC106A61AF76F21006347FD /* BorderTextView.swift */,
+				CBC106A71AF76F21006347FD /* FiltersView.swift */,
+				CBC106A81AF76F21006347FD /* MyImageButton.swift */,
+				CBC106A91AF76F21006347FD /* MyScrollView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		CBC106B31AF7703B006347FD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CBC107261AF7817B006347FD /* Utils.swift */,
+				CBC106B41AF77056006347FD /* Model.swift */,
+				CBC106B51AF77056006347FD /* MyExtensions.swift */,
+				CBC106B61AF77056006347FD /* Constants.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		CBEF47BF1AF8C02B0087762C /* SVEditor */ = {
+			isa = PBXGroup;
+			children = (
+				CBEF47C21AF8C0D50087762C /* SVControlView.swift */,
+				CB5121B51AFA59CA00A755AE /* SVImagesLayer.swift */,
+				CB0633501AFC5C8C0007E10F /* SVPlayPauseView.swift */,
+				CB4C41671AFDA54C0065A02A /* SVImagesView.swift */,
+			);
+			name = SVEditor;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,10 +305,12 @@
 				CB0797081AF766CB00510D5F /* Sources */,
 				CB0797091AF766CB00510D5F /* Frameworks */,
 				CB07970A1AF766CB00510D5F /* Resources */,
+				CB07973E1AF76AC100510D5F /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CB07973C1AF7692500510D5F /* PBXTargetDependency */,
 			);
 			name = ICamMoveLite;
 			productName = ICamMoveLite;
@@ -175,10 +360,17 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = CB0797031AF766CA00510D5F;
 			productRefGroup = CB07970D1AF766CB00510D5F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CB0797321AF768D300510D5F /* Products */;
+					ProjectRef = CB0797311AF768D300510D5F /* GPUImage.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CB07970B1AF766CB00510D5F /* ICamMoveLite */,
@@ -187,14 +379,31 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		CB0797381AF768D300510D5F /* libGPUImage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGPUImage.a;
+			remoteRef = CB0797371AF768D300510D5F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CB07973A1AF768D300510D5F /* GPUImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GPUImage.framework;
+			remoteRef = CB0797391AF768D300510D5F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		CB07970A1AF766CB00510D5F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBC106A21AF76EBD006347FD /* Images.xcassets in Resources */,
 				CB0797171AF766CB00510D5F /* Main.storyboard in Resources */,
 				CB07971C1AF766CB00510D5F /* LaunchScreen.xib in Resources */,
-				CB0797191AF766CB00510D5F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,7 +421,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB0797141AF766CB00510D5F /* ViewController.swift in Sources */,
+				CBEF47C31AF8C0D50087762C /* SVControlView.swift in Sources */,
+				CBC106AB1AF76F21006347FD /* FiltersView.swift in Sources */,
+				CBC107271AF7817B006347FD /* Utils.swift in Sources */,
+				CBC106AA1AF76F21006347FD /* BorderTextView.swift in Sources */,
+				CBC1077D1AF7C52C006347FD /* AudioMixViewController.swift in Sources */,
+				CBC1069C1AF76E01006347FD /* EditMovieViewController.swift in Sources */,
+				CB0633511AFC5C8C0007E10F /* SVPlayPauseView.swift in Sources */,
+				CBC106B81AF77056006347FD /* MyExtensions.swift in Sources */,
+				CB4C41681AFDA54C0065A02A /* SVImagesView.swift in Sources */,
+				CB0797141AF766CB00510D5F /* TakeMovieViewController.swift in Sources */,
+				CBC1069F1AF76E47006347FD /* FilterCollectionViewCell.swift in Sources */,
+				CBC106AD1AF76F21006347FD /* MyScrollView.swift in Sources */,
+				CBC106B91AF77056006347FD /* Constants.swift in Sources */,
+				CBC106AC1AF76F21006347FD /* MyImageButton.swift in Sources */,
+				CB5121B61AFA59CA00A755AE /* SVImagesLayer.swift in Sources */,
+				CBC106A41AF76EDA006347FD /* ShareMovieViewController.swift in Sources */,
+				CBC106B71AF77056006347FD /* Model.swift in Sources */,
+				CBC106A01AF76E47006347FD /* FilterCollectionViewController.swift in Sources */,
 				CB0797121AF766CB00510D5F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,6 +458,11 @@
 			isa = PBXTargetDependency;
 			target = CB07970B1AF766CB00510D5F /* ICamMoveLite */;
 			targetProxy = CB0797221AF766CB00510D5F /* PBXContainerItemProxy */;
+		};
+		CB07973C1AF7692500510D5F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GPUImageFramework;
+			targetProxy = CB07973B1AF7692500510D5F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -259,6 +490,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -294,6 +526,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -301,6 +534,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -329,6 +563,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
@@ -336,9 +571,29 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Frameworks/ShareSDK/Connection",
+					"$(PROJECT_DIR)/Frameworks/ShareSDK/Core",
+					"$(PROJECT_DIR)/Frameworks/ShareSDK",
+					"$(PROJECT_DIR)/ShareSDK/Connection",
+					"$(PROJECT_DIR)/ShareSDK/Core",
+					"$(PROJECT_DIR)/ShareSDK",
+				);
 				INFOPLIST_FILE = ICamMoveLite/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/ShareSDK/Extend/SinaWeiboSDK",
+					"$(PROJECT_DIR)/Frameworks/ShareSDK/Extend/WeChatSDK",
+					"$(PROJECT_DIR)/ShareSDK/Extend/SinaWeiboSDK",
+					"$(PROJECT_DIR)/ShareSDK/Extend/WeChatSDK",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = ICamMoveLite/bridge.h;
 			};
 			name = Debug;
 		};
@@ -346,9 +601,30 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/AVOS",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks/ShareSDK/Connection",
+					"$(PROJECT_DIR)/Frameworks/ShareSDK/Core",
+					"$(PROJECT_DIR)/Frameworks/ShareSDK",
+					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/ShareSDK/Connection",
+					"$(PROJECT_DIR)/ShareSDK/Core",
+					"$(PROJECT_DIR)/ShareSDK",
+				);
 				INFOPLIST_FILE = ICamMoveLite/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/ShareSDK/Extend/SinaWeiboSDK",
+					"$(PROJECT_DIR)/Frameworks/ShareSDK/Extend/WeChatSDK",
+					"$(PROJECT_DIR)/ShareSDK/Extend/SinaWeiboSDK",
+					"$(PROJECT_DIR)/ShareSDK/Extend/WeChatSDK",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = ICamMoveLite/bridge.h;
 			};
 			name = Release;
 		};
@@ -405,6 +681,7 @@
 				CB07972D1AF766CB00510D5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CB07972E1AF766CB00510D5F /* Build configuration list for PBXNativeTarget "ICamMoveLiteTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +690,7 @@
 				CB0797301AF766CB00510D5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
