@@ -15,45 +15,69 @@ import GPUImage
 
 class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
     
-    
+    // MARK: IBOutlets
     @IBOutlet weak var moviePreview: GPUImageView!
+    @IBOutlet weak var progress: UISlider!
+    @IBOutlet weak var playback: UIButton!
+    @IBOutlet weak var subtitleView: UIView!
+    @IBOutlet weak var filterView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    
+    // MARK: Movie attributes
+    
     var movie2 : GPUImageMovie!
     var player:  AVPlayer!
     var playerItem: AVPlayerItem!
+    var movieDuration: CMTime!
     
-    
-    
-    
-    var isPlaying = false
-    
-    
-    
+
+    // MARK: segue presented attributes
     var toEditMovieURL: NSURL!
     var toEditMovieType: MovieType!
     var toEditMovieSize: CGSize!
     
+    // MARK: Filters
+    var filter: GPUImageFilter!
+    var sourcePicture: GPUImagePicture!
+    var colorGen = GPUImageSolidColorGenerator()
+    
+    // MARK: Other attriubtes
     var currentShowing: UIView?
-    
     var curFilterIndex: Int?
-    
     var timer: NSTimer!
     
     var movieURLToShare: NSURL!
     
     
+    var observer: AnyObject!
+    
+    
     // Set show mask as default
-    var maskShowing: Bool  = true
+    var maskShowing: Bool  = true {
+        didSet {
+            
+        }
+    }
+
+
+    
+    var isPlaying: Bool = false {
+        didSet {
+            if isPlaying {
+                player.play()
+                playback.setImage(UIImage(named: "pause"), forState: .Normal)
+                
+            }else{
+                player.pause()
+                playback.setImage(UIImage(named: "play"), forState: .Normal)
+            }
+            
+        }
+    }
     
     
-    
-    
-    @IBOutlet weak var subtitleView: UIView!
-    
-    @IBOutlet weak var filterView: UIView!
-    
-    
-    
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
     
     // MARK: Override methods
     
@@ -61,8 +85,19 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        colorGen.setColorRed(1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        
+        
+        toEditMovieURL = Utils.getTestVideo2Url()
+        toEditMovieType = .Cinema
+        toEditMovieSize = CGSize(width: 400, height: 300)
+        
         
         println("edit movie:\(toEditMovieURL)")
+        println("to edit movie size:\(toEditMovieSize)")
+
+        
+        self.getMovieInfo(toEditMovieURL)
         
         
         for childVC in childViewControllers{
@@ -84,6 +119,13 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
     //        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
     //    }
     
+    
+    
+
+
+
+    
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -99,19 +141,50 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
         
         movie2 = GPUImageMovie(playerItem: playerItem)
         movie2.playAtActualSpeed = true
-        movie2.addTarget(self.moviePreview)
         
+        
+        
+        filter = GPUImageFilter(fragmentShaderFromString: kGPUImagePassthroughFragmentShaderString)
+        
+        movie2.addTarget(filter)
+        
+        filter.addTarget(self.moviePreview)
+        
+        
+        observer = player.addPeriodicTimeObserverForInterval(CMTimeMake(3,30), queue: nil, usingBlock: {
+            (t: CMTime) in
+            
+            if let duration = self.movieDuration {
+                var percent = Float( CMTimeGetSeconds(t) / CMTimeGetSeconds(duration) )
+                self.progress.value = percent
+            }
+            
+            
+            return
+        })
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
         
-        player.play()
+        isPlaying = true
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "videoItemDidReachEnd:", name: AVPlayerItemDidPlayToEndTimeNotification, object:
+            playerItem)
+        
         movie2.startProcessing()
     }
     
 
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        isPlaying = false
+        
+        player.removeTimeObserver(observer)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -128,55 +201,131 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
         }
     }
     
-    // Selectors
+    // MARK: Selectors
     
     func onProgress(){
         
         
     }
     
+    func videoItemDidReachEnd(notif: NSNotification){
+        
+        var item = notif.object as AVPlayerItem
+        item.seekToTime(kCMTimeZero)
+        isPlaying = false
+        
+    }
+    
+    
+    // MARK: Utils
+    
+    func getMovieInfo(url: NSURL){
+        var asset = AVURLAsset(URL: url, options: nil)
+        asset.loadValuesAsynchronouslyForKeys(["tracks","duration"], completionHandler: {
+            var error: NSError?
+            if asset.statusOfValueForKey("tracks", error: &error) == .Loaded {
+                var track = asset.tracksWithMediaType(AVMediaTypeVideo) [0] as AVAssetTrack
+                
+                println("naturalSize:\(track.naturalSize)")
+                
+            }else{
+                println("Erorr:\(error!.localizedDescription)")
+            }
+            
+            if asset.statusOfValueForKey("duration", error: &error) == .Loaded {
+                self.movieDuration = asset.duration
+            }else{
+                println("Error get Duration:\(error!.localizedDescription)")
+            }
+        })
+    }
+    
+    
+    
     
     
     // MARK: FilterCollectionViewDelegates
-    func filterSelected(filterIndex: Int) {
+    
+    var tmpFilter: GPUImagePerlinNoiseFilter!
+    
+    func filterSelected(filterType: FilterType) {
         
-    }
-    
-    
-    
-    // MARK: UI actions
-    @IBAction func unwindToEditMovie(segue: UIStoryboardSegue) {
-        if segue.identifier == "segueDidAddSubtitle" {
-
+        
+        movie2.removeAllTargets()
+        filter.removeAllTargets()
+        
+        
+        var name = filterType.filterFileName
+        
+        
+        
+        if name == kGPUImagePassthroughFragmentShaderString {
+            filter = GPUImageFilter(fragmentShaderFromString: kGPUImagePassthroughFragmentShaderString)
+            movie2.addTarget(filter)
+            filter.addTarget(moviePreview)
             
-        }
-    }
-    
-    @IBAction func maskAction(sender: UIButton) {
+        }else if name == "amaro_twoinput"{
+//            filter = GPUImageOverlayBlendFilter()
+            filter = GPUImageTwoInputFilter(fragmentShaderFromFile: name)
+            var inputImage = UIImage(named: "mask0")
+            sourcePicture = GPUImagePicture(image: inputImage, smoothlyScaleOutput: true)
+            sourcePicture.processImage()
+            sourcePicture.addTarget(filter)
+            
+            movie2.addTarget(filter)
+            filter.addTarget(moviePreview)
+            
+        }else if name == "amaro_twoinput_reverse"{
+
+            filter = GPUImageTwoInputFilter(fragmentShaderFromFile: "amaro_twoinput")
+            var inputImage = UIImage(named: "mask0")
+            sourcePicture = GPUImagePicture(image: inputImage, smoothlyScaleOutput: true)
+            sourcePicture.processImage()
+            
+            
+            movie2.addTarget(filter)
+            sourcePicture.addTarget(filter)
+            filter.addTarget(moviePreview)
         
-        maskShowing = !maskShowing
-        
-    }
-    
-    
-    @IBAction func subtitleAction(sender: UIBarButtonItem) {
-        
-        if self.currentShowing != nil {
-            self.currentShowing!.hidden = true
-        }
-        
-        
-        if self.currentShowing != self.subtitleView {
-            self.subtitleView.hidden = false
-            self.currentShowing = self.subtitleView
+        }else if name == "grayscale_bloodred"{
+            
+            filter = GPUImageFilter(fragmentShaderFromFile: name)
+            
+            tmpFilter = GPUImagePerlinNoiseFilter()
+            
+            
+            
+            
+            movie2.addTarget(filter)
+            
+            filter.addTarget(tmpFilter)
+            
+            tmpFilter.addTarget(moviePreview)
+            
+            
+
         }else{
-            self.currentShowing = nil
+            filter = GPUImageFilter(fragmentShaderFromFile: name)
+            movie2.addTarget(filter)
+            
+            if filterType.mask  != nil {
+                var image = UIImage(named: filterType.mask!)
+                sourcePicture = GPUImagePicture(image: image, smoothlyScaleOutput: true)
+                sourcePicture.addTarget(filter)
+            }
+            
+            
+            filter.addTarget(moviePreview)
         }
         
         
+
+        isPlaying = true
         
     }
     
+    
+
 //    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
 //        
 //        coordinator.animateAlongsideTransition(nil, completion: {
@@ -210,6 +359,53 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
     
     
     // MARK: Actions
+    @IBAction func unwindToEditMovie(segue: UIStoryboardSegue) {
+        if segue.identifier == "segueDidAddSubtitle" {
+            
+            
+        }
+    }
+    
+    @IBAction func maskAction(sender: UIButton) {
+        
+        maskShowing = !maskShowing
+        
+    }
+    
+    
+    @IBAction func subtitleAction(sender: UIBarButtonItem) {
+        
+        if self.currentShowing != nil {
+            self.currentShowing!.hidden = true
+        }
+        
+        
+        if self.currentShowing != self.subtitleView {
+            self.subtitleView.hidden = false
+            self.currentShowing = self.subtitleView
+        }else{
+            self.currentShowing = nil
+        }
+        
+        
+        
+    }
+    
+    @IBAction func onProgressDrag(sender: UISlider) {
+        
+        isPlaying = false
+        
+        var val = sender.value
+        if let duration = movieDuration {
+            var time = CMTimeMultiplyByFloat64(duration, Float64(val))
+            var tolerance = CMTimeMake(2, 30)
+            player.seekToTime(time, toleranceBefore: tolerance, toleranceAfter: tolerance)
+        }
+        
+    }
+    @IBAction func onPlaybackClick(sender: UIButton) {
+        isPlaying = !isPlaying
+    }
     
     @IBAction func filerAction(sender: UIBarButtonItem) {
         

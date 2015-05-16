@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ICamMoveLite/SunsetVideoPlayEdit/SVImagesView.swift"
-            timestampString = "452857876.291215"
+            filePath = "ICamMoveLite/SunsetVideoPlayEdit/SVImagesLayer.swift"
+            timestampString = "452846787.716204"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "handlePan(_:)"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "drawInContext(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,14 +25,92 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ICamMoveLite/SunsetVideoPlayEdit/SVImagesLayer.swift"
-            timestampString = "452846787.716204"
+            filePath = "ICamMoveLite/SunsetVideoPlayEdit/SVImagesMaskLayer.swift"
+            timestampString = "453106661.432097"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "drawInContext(_:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ICamMoveLite/SunsetVideoPlayEdit/SVImagesMaskLayer.swift"
+            timestampString = "453106661.432097"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "drawInContext(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ICamMoveLite.SVImagesMaskLayer.drawInContext (ICamMoveLite.SVImagesMaskLayer)(Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.CGContext&gt;) -&gt; ()"
+                  moduleName = "ICamMoveLite"
+                  urlString = "file:///Users/sunset/projects/iOS_App/Products/ICamMoveLite/ICamMoveLite/SunsetVideoPlayEdit/SVImagesMaskLayer.swift"
+                  timestampString = "453093846.438179"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "428">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ICamMoveLite.SVImagesMaskLayer.drawInContext (ICamMoveLite.SVImagesMaskLayer)(Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.CGContext&gt;) -&gt; ()"
+                  moduleName = "ICamMoveLite"
+                  urlString = "file:///Users/sunset/projects/iOS_App/Products/ICamMoveLite/ICamMoveLite/SunsetVideoPlayEdit/SVImagesMaskLayer.swift"
+                  timestampString = "453093846.438474"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "540">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../../Volumes/AppleData/Resources/open source code/GPUImage-0.1.6/framework/Source/GPUImageFramebuffer.m"
+            timestampString = "453287427.689209"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "-generateFramebuffer"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ICamMoveLite/Filters/grayscale_bloodred.fsh"
+            timestampString = "453299982.530991"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "main()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

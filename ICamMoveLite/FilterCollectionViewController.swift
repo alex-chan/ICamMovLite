@@ -8,17 +8,35 @@
 
 import Foundation
 import UIKit
+import GPUImage
 
-enum FilterType{
-    case Original
-    case Filter0
+struct FilterType {
+    var displayName: String
+    var filterFileName: String
+    var previewImageName: String
+    var mask: String?
+    init(displayName display: String, filterFileName filter: String, previewImageName preview: String, mask: String?){
+        displayName = display
+        filterFileName = filter
+        previewImageName = preview
+        self.mask = mask
+    }
+    
+    init(displayName display: String, filterFileName filter: String, previewImageName preview: String){
+        self.init(displayName: display, filterFileName: filter, previewImageName: preview, mask: nil)
+    }
     
 }
 
 protocol FilterCollectionViewDelegate {
-    func filterSelected(filterIndex: Int)
+    func filterSelected(filter:FilterType)
+    
     
 }
+
+
+
+
 
 class FilterCollectionViewController: UICollectionViewController, UICollectionViewDataSource, UICollectionViewDelegate{
     
@@ -26,9 +44,24 @@ class FilterCollectionViewController: UICollectionViewController, UICollectionVi
     
     var delegate: FilterCollectionViewDelegate?
     
-    var curSelectedCellIndex:  NSIndexPath? {
+    var filters = [
+        FilterType(displayName: "无", filterFileName: kGPUImagePassthroughFragmentShaderString , previewImageName: "filter00"),
+        FilterType(displayName: "测试", filterFileName: "test" , previewImageName: "filter01"),
+        FilterType(displayName: "Hefe", filterFileName: "hefe" , previewImageName: "filter01", mask:"hefe"),
+        FilterType(displayName: "Amaro", filterFileName: "amaro" , previewImageName: "filter02"),
+        FilterType(displayName: "AmaroTwoInput", filterFileName: "amaro_twoinput" , previewImageName: "filter03", mask:"mask0"),
+        FilterType(displayName: "AmaroTwoInputR", filterFileName: "amaro_twoinput_reverse" , previewImageName: "filter04", mask:"mask0"),
+        FilterType(displayName: "血色黑白", filterFileName: "grayscale_bloodred" , previewImageName: "filter05")
+        
+    ]
+    
+    var curSelectedCellIndex:  NSIndexPath! = NSIndexPath(index: 0) {
         didSet {
-            delegate?.filterSelected(curSelectedCellIndex!.item) // After selected, I could not be nil again
+            if let del = delegate {
+                var name = filters[curSelectedCellIndex.item]
+                
+                del.filterSelected(name)
+            }
         }
     }
     
@@ -40,7 +73,7 @@ class FilterCollectionViewController: UICollectionViewController, UICollectionVi
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return countElements(filters)
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -48,13 +81,11 @@ class FilterCollectionViewController: UICollectionViewController, UICollectionVi
 //        cell.backgroundColor = UIColor.appGlobalColor()
         
         
-        var imageName = "filter\(indexPath.item)"
-        if indexPath.item <= 9 {
-            imageName = "filter0\(indexPath.item)"
-        }
+        var imageName = filters[indexPath.item].previewImageName
+        var displayName = filters[indexPath.item].displayName
         
         cell.filterImage.image = UIImage(named: imageName)
-        cell.filterName.text = imageName
+        cell.filterName.text = displayName
         
         if indexPath == curSelectedCellIndex {
             cell.backgroundColor = UIColor.appGlobalColor()
@@ -72,7 +103,7 @@ class FilterCollectionViewController: UICollectionViewController, UICollectionVi
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         var cell = collectionView.cellForItemAtIndexPath(indexPath)
         if curSelectedCellIndex != nil {
-            collectionView.cellForItemAtIndexPath(curSelectedCellIndex!)?.backgroundColor = UIColor.clearColor()
+            collectionView.cellForItemAtIndexPath(curSelectedCellIndex)?.backgroundColor = UIColor.clearColor()
         }
         cell?.backgroundColor = UIColor.appGlobalColor()
         curSelectedCellIndex = indexPath

@@ -49,9 +49,9 @@ class SVImagesLayer: CALayer {
             var tmpPixWidth: CGFloat = 0.0
             
             for var i = 0; i < cnt; ++i {
-                
+                println("i :\(i)")
                 var image = images[i]
-                var rect = CGRectMake(width * CGFloat(i), 0, width, height)
+                var rect = CGRectMake( (width) * CGFloat(i), 0, width, height)
                 
                 
                 

@@ -44,13 +44,9 @@ class SVControlView: UIControl{
     
     var playingTime: CMTime! {
         didSet {
-//            playtimeLabel.text = self.formatSeconds(Double(CMTimeGetSeconds(playingTime))) 
-            
-            if controlFlow == .ViewToController {
-                self.sendActionsForControlEvents(.ValueChanged)
-            }
-            
+            playtimeLabel.text = self.formatSeconds(Double(CMTimeGetSeconds(playingTime)))
         }
+ 
     }
     
 
@@ -58,13 +54,9 @@ class SVControlView: UIControl{
     var isPlaying: Bool = false  {
         didSet {
             playPauseView.setImage(UIImage(named: isPlaying ?"pause" : "play"), forState: .Normal)
-            if oldValue != isPlaying {
-                self.sendActionsForControlEvents(.PlayPauseClicked)
-            }
-            
-            
         }
     }
+    
     
     // MARK: init
     
@@ -133,7 +125,13 @@ class SVControlView: UIControl{
         durationLabel.frame = CGRect(x: bounds.width-labelWidth, y: 0, width: labelWidth, height: labelHeight)
         durationLabel.textAlignment = .Right
         
-        (playPauseView.frame, imagesView.frame)  = bottom.rectsByDividing(bounds.height, fromEdge: .MinXEdge)
+        var tmpframe: CGRect
+        (playPauseView.frame, tmpframe)  = bottom.rectsByDividing(bounds.height, fromEdge: .MinXEdge)
+        
+//        tmpframe.size.width = 2000.0
+        imagesView.frame = tmpframe
+        
+        
         playPauseView.setNeedsDisplay()
         
     }
@@ -141,14 +139,18 @@ class SVControlView: UIControl{
     
     func playPauseClicked(btn: UIButton){
         
-        println("control 2 view")
         isPlaying = !isPlaying
-        controlFlow = .ControllerToView
+        self.sendActionsForControlEvents(.PlayPauseClicked)
+        
     }
     
     func scrollToTime(t: CMTime){
         
         imagesView.scrollToTime(t)
+    }
+    
+    func drawMask(start: CMTime, end: CMTime){
+        imagesView.drawMask(start, end: end)
     }
 
     // MARK: Utils

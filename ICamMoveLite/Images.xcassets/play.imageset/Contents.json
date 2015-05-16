@@ -6,13 +6,12 @@
     },
     {
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "play-arrow-32.png"
+      "scale" : "2x"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "play-arrow-48.png"
+      "filename" : "play_btn.png"
     }
   ],
   "info" : {

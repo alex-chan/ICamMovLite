@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB00FE641B0190E80071622C /* SVImagesMaskLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB00FE631B0190E80071622C /* SVImagesMaskLayer.swift */; };
 		CB0633511AFC5C8C0007E10F /* SVPlayPauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0633501AFC5C8C0007E10F /* SVPlayPauseView.swift */; };
 		CB0797121AF766CB00510D5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0797111AF766CB00510D5F /* AppDelegate.swift */; };
 		CB0797141AF766CB00510D5F /* TakeMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0797131AF766CB00510D5F /* TakeMovieViewController.swift */; };
@@ -14,8 +15,17 @@
 		CB07971C1AF766CB00510D5F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB07971A1AF766CB00510D5F /* LaunchScreen.xib */; };
 		CB0797281AF766CB00510D5F /* ICamMoveLiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0797271AF766CB00510D5F /* ICamMoveLiteTests.swift */; };
 		CB07973D1AF7694500510D5F /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB07973A1AF768D300510D5F /* GPUImage.framework */; };
+		CB4909E51B0584FF00743DA3 /* SVPlaybackControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4909E41B0584FF00743DA3 /* SVPlaybackControl.swift */; };
 		CB4C41681AFDA54C0065A02A /* SVImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4C41671AFDA54C0065A02A /* SVImagesView.swift */; };
 		CB5121B61AFA59CA00A755AE /* SVImagesLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5121B51AFA59CA00A755AE /* SVImagesLayer.swift */; };
+		CB5255891B046FDB004B8278 /* amaro.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CB5255881B046FDB004B8278 /* amaro.fsh */; };
+		CB5255911B048689004B8278 /* amaro_twoinput.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CB5255901B048689004B8278 /* amaro_twoinput.fsh */; };
+		CB5255951B048BF8004B8278 /* mask0.png in Resources */ = {isa = PBXBuildFile; fileRef = CB5255941B048BF8004B8278 /* mask0.png */; };
+		CB52559B1B04999A004B8278 /* mask_test.png in Resources */ = {isa = PBXBuildFile; fileRef = CB52559A1B04999A004B8278 /* mask_test.png */; };
+		CB52559D1B04C79B004B8278 /* grayscale_bloodred.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CB52559C1B04C79B004B8278 /* grayscale_bloodred.fsh */; };
+		CB5255A11B04DD5F004B8278 /* hefe.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CB5255A01B04DD5F004B8278 /* hefe.fsh */; };
+		CB5255A51B04DEB5004B8278 /* hefe.png in Resources */ = {isa = PBXBuildFile; fileRef = CB5255A41B04DEB5004B8278 /* hefe.png */; };
+		CBB156C11B0325EE00F3B448 /* test.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CBB156C01B0325EE00F3B448 /* test.fsh */; };
 		CBC1069A1AF76AFE006347FD /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CB07973A1AF768D300510D5F /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CBC1069C1AF76E01006347FD /* EditMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC1069B1AF76E01006347FD /* EditMovieViewController.swift */; };
 		CBC1069F1AF76E47006347FD /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC1069D1AF76E47006347FD /* FilterCollectionViewCell.swift */; };
@@ -44,6 +54,7 @@
 		CBC107291AF781AE006347FD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC107281AF781AE006347FD /* AVFoundation.framework */; };
 		CBC1077D1AF7C52C006347FD /* AudioMixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC1077C1AF7C52C006347FD /* AudioMixViewController.swift */; };
 		CBEF47C31AF8C0D50087762C /* SVControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF47C21AF8C0D50087762C /* SVControlView.swift */; };
+		CBF212C91B005FB100C4FE2B /* test2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CBF212C81B005FB100C4FE2B /* test2.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +102,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CB00FE631B0190E80071622C /* SVImagesMaskLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SVImagesMaskLayer.swift; path = SunsetVideoPlayEdit/SVImagesMaskLayer.swift; sourceTree = "<group>"; };
 		CB0633501AFC5C8C0007E10F /* SVPlayPauseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SVPlayPauseView.swift; path = SunsetVideoPlayEdit/SVPlayPauseView.swift; sourceTree = "<group>"; };
 		CB07970C1AF766CB00510D5F /* ICamMoveLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICamMoveLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB0797101AF766CB00510D5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,8 +114,17 @@
 		CB0797261AF766CB00510D5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB0797271AF766CB00510D5F /* ICamMoveLiteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICamMoveLiteTests.swift; sourceTree = "<group>"; };
 		CB0797311AF768D300510D5F /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = "../../../../../../Volumes/AppleData/Resources/open source code/GPUImage-0.1.6/framework/GPUImage.xcodeproj"; sourceTree = "<group>"; };
+		CB4909E41B0584FF00743DA3 /* SVPlaybackControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SVPlaybackControl.swift; path = SunsetVideoPlayEdit/SVPlaybackControl.swift; sourceTree = "<group>"; };
 		CB4C41671AFDA54C0065A02A /* SVImagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SVImagesView.swift; path = SunsetVideoPlayEdit/SVImagesView.swift; sourceTree = "<group>"; };
 		CB5121B51AFA59CA00A755AE /* SVImagesLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SVImagesLayer.swift; path = SunsetVideoPlayEdit/SVImagesLayer.swift; sourceTree = "<group>"; };
+		CB5255881B046FDB004B8278 /* amaro.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = amaro.fsh; path = Filters/amaro.fsh; sourceTree = "<group>"; };
+		CB5255901B048689004B8278 /* amaro_twoinput.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = amaro_twoinput.fsh; path = Filters/amaro_twoinput.fsh; sourceTree = "<group>"; };
+		CB5255941B048BF8004B8278 /* mask0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask0.png; sourceTree = "<group>"; };
+		CB52559A1B04999A004B8278 /* mask_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask_test.png; sourceTree = "<group>"; };
+		CB52559C1B04C79B004B8278 /* grayscale_bloodred.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = grayscale_bloodred.fsh; path = Filters/grayscale_bloodred.fsh; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.glsl; };
+		CB5255A01B04DD5F004B8278 /* hefe.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = hefe.fsh; path = Filters/hefe.fsh; sourceTree = "<group>"; };
+		CB5255A41B04DEB5004B8278 /* hefe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hefe.png; sourceTree = "<group>"; };
+		CBB156C01B0325EE00F3B448 /* test.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = test.fsh; path = Filters/test.fsh; sourceTree = "<group>"; };
 		CBC1069B1AF76E01006347FD /* EditMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditMovieViewController.swift; sourceTree = "<group>"; };
 		CBC1069D1AF76E47006347FD /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		CBC1069E1AF76E47006347FD /* FilterCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +154,7 @@
 		CBC1072B1AF7823C006347FD /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVOSCloud.framework; path = Frameworks/AVOSCloud.framework; sourceTree = "<group>"; };
 		CBC1077C1AF7C52C006347FD /* AudioMixViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioMixViewController.swift; sourceTree = "<group>"; };
 		CBEF47C21AF8C0D50087762C /* SVControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SVControlView.swift; path = SunsetVideoPlayEdit/SVControlView.swift; sourceTree = "<group>"; };
+		CBF212C81B005FB100C4FE2B /* test2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test2.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +231,7 @@
 		CB07970E1AF766CB00510D5F /* ICamMoveLite */ = {
 			isa = PBXGroup;
 			children = (
+				CBF212C51B005FA400C4FE2B /* Resourses */,
 				CBEF47BF1AF8C02B0087762C /* SVEditor */,
 				CBC106B31AF7703B006347FD /* Utils */,
 				CBC106A51AF76F21006347FD /* UI */,
@@ -262,6 +285,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		CBB156BD1B03259500F3B448 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				CBB156C01B0325EE00F3B448 /* test.fsh */,
+				CB5255881B046FDB004B8278 /* amaro.fsh */,
+				CB5255901B048689004B8278 /* amaro_twoinput.fsh */,
+				CB52559C1B04C79B004B8278 /* grayscale_bloodred.fsh */,
+				CB5255A01B04DD5F004B8278 /* hefe.fsh */,
+			);
+			name = Filters;
+			sourceTree = "<group>";
+		};
 		CBC106A51AF76F21006347FD /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,10 +324,24 @@
 			children = (
 				CBEF47C21AF8C0D50087762C /* SVControlView.swift */,
 				CB5121B51AFA59CA00A755AE /* SVImagesLayer.swift */,
+				CB00FE631B0190E80071622C /* SVImagesMaskLayer.swift */,
 				CB0633501AFC5C8C0007E10F /* SVPlayPauseView.swift */,
 				CB4C41671AFDA54C0065A02A /* SVImagesView.swift */,
+				CB4909E41B0584FF00743DA3 /* SVPlaybackControl.swift */,
 			);
 			name = SVEditor;
+			sourceTree = "<group>";
+		};
+		CBF212C51B005FA400C4FE2B /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				CBB156BD1B03259500F3B448 /* Filters */,
+				CB5255941B048BF8004B8278 /* mask0.png */,
+				CB5255A41B04DEB5004B8278 /* hefe.png */,
+				CB52559A1B04999A004B8278 /* mask_test.png */,
+				CBF212C81B005FB100C4FE2B /* test2.mp4 */,
+			);
+			name = Resourses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,9 +450,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB5255951B048BF8004B8278 /* mask0.png in Resources */,
 				CBC106A21AF76EBD006347FD /* Images.xcassets in Resources */,
 				CB0797171AF766CB00510D5F /* Main.storyboard in Resources */,
+				CB5255911B048689004B8278 /* amaro_twoinput.fsh in Resources */,
+				CB52559B1B04999A004B8278 /* mask_test.png in Resources */,
+				CB5255891B046FDB004B8278 /* amaro.fsh in Resources */,
+				CBF212C91B005FB100C4FE2B /* test2.mp4 in Resources */,
 				CB07971C1AF766CB00510D5F /* LaunchScreen.xib in Resources */,
+				CBB156C11B0325EE00F3B448 /* test.fsh in Resources */,
+				CB5255A11B04DD5F004B8278 /* hefe.fsh in Resources */,
+				CB52559D1B04C79B004B8278 /* grayscale_bloodred.fsh in Resources */,
+				CB5255A51B04DEB5004B8278 /* hefe.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,8 +487,10 @@
 				CBC1069C1AF76E01006347FD /* EditMovieViewController.swift in Sources */,
 				CB0633511AFC5C8C0007E10F /* SVPlayPauseView.swift in Sources */,
 				CBC106B81AF77056006347FD /* MyExtensions.swift in Sources */,
+				CB4909E51B0584FF00743DA3 /* SVPlaybackControl.swift in Sources */,
 				CB4C41681AFDA54C0065A02A /* SVImagesView.swift in Sources */,
 				CB0797141AF766CB00510D5F /* TakeMovieViewController.swift in Sources */,
+				CB00FE641B0190E80071622C /* SVImagesMaskLayer.swift in Sources */,
 				CBC1069F1AF76E47006347FD /* FilterCollectionViewCell.swift in Sources */,
 				CBC106AD1AF76F21006347FD /* MyScrollView.swift in Sources */,
 				CBC106B91AF77056006347FD /* Constants.swift in Sources */,

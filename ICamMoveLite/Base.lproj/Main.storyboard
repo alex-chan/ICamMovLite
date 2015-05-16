@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BZz-OA-nbH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FEi-Gw-EUY">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -287,19 +287,57 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vu9-54-GPk" userLabel="PlayerView">
                                 <rect key="frame" x="0.0" y="64" width="400" height="202"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dzi-rg-GJc" customClass="GPUImageView">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dzi-rg-GJc" customClass="GPUImageView">
+                                        <rect key="frame" x="0.0" y="-64" width="400" height="206"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="-84" width="400" height="0.0"/>
                                         </variation>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="82V-7v-Rbr" userLabel="playcontrol">
+                                        <rect key="frame" x="0.0" y="142" width="400" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27j-Vx-76m" userLabel="playback">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="27j-Vx-76m" secondAttribute="height" id="NHH-gX-h0Q"/>
+                                                </constraints>
+                                                <state key="normal" image="play">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onPlaybackClick:" destination="FEi-Gw-EUY" eventType="touchUpInside" id="dxJ-K4-XtV"/>
+                                                </connections>
+                                            </button>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wl9-Ni-fx6">
+                                                <rect key="frame" x="58" y="15" width="342" height="31"/>
+                                                <connections>
+                                                    <action selector="onProgressDrag:" destination="FEi-Gw-EUY" eventType="valueChanged" id="pKc-7f-oN4"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="wl9-Ni-fx6" secondAttribute="trailing" constant="2" id="Cjk-EG-CzR"/>
+                                            <constraint firstItem="27j-Vx-76m" firstAttribute="leading" secondItem="82V-7v-Rbr" secondAttribute="leading" id="EFN-gs-ipW"/>
+                                            <constraint firstAttribute="bottom" secondItem="27j-Vx-76m" secondAttribute="bottom" id="Qck-LF-stP"/>
+                                            <constraint firstAttribute="centerY" secondItem="wl9-Ni-fx6" secondAttribute="centerY" id="WcB-JA-8H9"/>
+                                            <constraint firstItem="wl9-Ni-fx6" firstAttribute="leading" secondItem="27j-Vx-76m" secondAttribute="trailing" id="hOK-jQ-Q7L"/>
+                                            <constraint firstItem="27j-Vx-76m" firstAttribute="top" secondItem="82V-7v-Rbr" secondAttribute="top" id="jIS-9o-7zq"/>
+                                            <constraint firstAttribute="height" constant="60" id="uO7-sU-cbw"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Dzi-rg-GJc" secondAttribute="trailing" id="5aw-0n-59G"/>
                                     <constraint firstItem="Dzi-rg-GJc" firstAttribute="leading" secondItem="Vu9-54-GPk" secondAttribute="leading" id="8Y7-ly-bbu"/>
+                                    <constraint firstItem="82V-7v-Rbr" firstAttribute="leading" secondItem="Vu9-54-GPk" secondAttribute="leading" id="BVy-Mq-jMp"/>
                                     <constraint firstItem="Dzi-rg-GJc" firstAttribute="top" secondItem="Vu9-54-GPk" secondAttribute="top" constant="-64" id="ME0-lL-FGF">
                                         <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                     </constraint>
+                                    <constraint firstAttribute="bottom" secondItem="82V-7v-Rbr" secondAttribute="bottom" id="SRA-64-NJa"/>
+                                    <constraint firstItem="82V-7v-Rbr" firstAttribute="top" secondItem="Dzi-rg-GJc" secondAttribute="bottom" id="Y73-ww-ZiQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="82V-7v-Rbr" secondAttribute="trailing" id="uPn-so-4dg"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -327,6 +365,8 @@
                         <outlet property="activityIndicator" destination="pfO-hg-UFk" id="B9X-Fp-H1c"/>
                         <outlet property="filterView" destination="yzd-gT-LOK" id="Hc5-Ye-iIP"/>
                         <outlet property="moviePreview" destination="Dzi-rg-GJc" id="Fv1-qY-M5E"/>
+                        <outlet property="playback" destination="27j-Vx-76m" id="wlh-YP-ua7"/>
+                        <outlet property="progress" destination="wl9-Ni-fx6" id="AIo-IE-qw0"/>
                         <outlet property="subtitleView" destination="p2K-PU-nKy" id="MfX-WK-zmu"/>
                         <segue destination="RqH-bd-aQD" kind="show" identifier="toShareMovieSegue" id="YKI-PH-6gt"/>
                     </connections>
@@ -348,18 +388,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vky-7b-3C7" userLabel="PlayerView">
-                                <rect key="frame" x="0.0" y="64" width="400" height="44"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vky-7b-3C7" userLabel="PlayerView">
+                                <rect key="frame" x="0.0" y="64" width="400" height="66"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="67d-9Y-Iob" customClass="GPUImageView">
-                                        <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="-84" width="400" height="0.0"/>
                                         </variation>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hTv-xu-nzP" userLabel="Controls" customClass="SVControlView" customModule="ICamMoveLite" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hTv-xu-nzP" userLabel="Controls" customClass="SVControlView" customModule="ICamMoveLite" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="66"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="66" id="f9p-TM-Fzq"/>
@@ -379,11 +418,16 @@
                                     <constraint firstAttribute="bottom" secondItem="hTv-xu-nzP" secondAttribute="bottom" id="wjb-8a-EfD"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwz-X4-hWs">
-                                <rect key="frame" x="185" y="362" width="30" height="30"/>
-                                <state key="normal" title="录音">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwz-X4-hWs">
+                                <rect key="frame" x="177" y="346" width="46" height="46"/>
+                                <state key="normal" image="audio_record">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancelRecordAudio:" destination="SJN-UB-u71" eventType="touchUpOutside" id="oYI-fx-9is"/>
+                                    <action selector="recordAudio:" destination="SJN-UB-u71" eventType="touchDown" id="qsU-tb-pn0"/>
+                                    <action selector="stopRecordAudio:" destination="SJN-UB-u71" eventType="touchUpInside" id="H5d-HC-z44"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -406,6 +450,7 @@
                     <connections>
                         <outlet property="playbackControl" destination="hTv-xu-nzP" id="4I3-K3-Aq8"/>
                         <outlet property="preview" destination="67d-9Y-Iob" id="cbD-h3-DAN"/>
+                        <outlet property="recordAudioBtn" destination="uwz-X4-hWs" id="KpW-6Z-j8V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XsN-E9-YSW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -797,5 +842,7 @@
         <image name="Save_gray" width="32" height="32"/>
         <image name="Share" width="32" height="32"/>
         <image name="Share_gray" width="32" height="32"/>
+        <image name="audio_record" width="46" height="46"/>
+        <image name="play" width="44" height="44"/>
     </resources>
 </document>

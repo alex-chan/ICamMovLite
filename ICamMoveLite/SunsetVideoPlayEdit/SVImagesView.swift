@@ -32,6 +32,7 @@ class SVImagesView: UIView {
     var currentPlayingTimeSec: Double = 0.0
     
     let imagesLayer =  SVImagesLayer()
+    let imagesMaskLayer = SVImagesMaskLayer()
     let scrollLayer = CAScrollLayer()
     let splitterLayer = CAShapeLayer()
     
@@ -80,9 +81,12 @@ class SVImagesView: UIView {
         updateTimeLabelQueue = dispatch_queue_create("updateTimeLabelQueue", nil)
         
         imagesLayer.shouldRasterize = true
+        imagesLayer.opaque = true
+        imagesMaskLayer.shouldRasterize = true
+//        scrollLayer.masksToBounds = false
+        scrollLayer.opaque = true
         scrollLayer.addSublayer(imagesLayer)
-        
-        
+        scrollLayer.addSublayer(imagesMaskLayer)
         
         layer.addSublayer(scrollLayer)
         layer.addSublayer(splitterLayer)
@@ -90,8 +94,9 @@ class SVImagesView: UIView {
         layer.backgroundColor = UIColor.redColor().CGColor
         
         //
-        var pan = UIPanGestureRecognizer(target: self, action: "handlePan:")
-        self.addGestureRecognizer(pan)
+//        var pan = UIPanGestureRecognizer(target: self, action: "handlePan:")
+//        
+//        self.addGestureRecognizer(pan)
         //
         
         self.updateLayerFrames()
@@ -107,52 +112,148 @@ class SVImagesView: UIView {
         //        self.updateLayerFrames()
     }
     
-    // MARK: Gestures
-    func handlePan(gesture: UIPanGestureRecognizer){
-
-        weakControl.controlFlow = .ViewToController
-
-        
-        var offset = scrollLayer.bounds.origin
-        
-//        println("offset x:\(offset.x)")
-        
-
-        
-        var translation = gesture.translationInView(self)
-        
-        offset.x -= translation.x
-        
-        println("translation x:\(translation.x)")
-        
-        gesture.setTranslation(CGPointZero, inView: self)
-        
-        
-//        println("image width:\(imagesLayer.totalPixWidth)")
-        var cur = offset.x + CGRectGetMidX(bounds)
-        if  cur >= imagesLayer.totalPixWidth  || cur <= 0.0 {
-            // Stop animate cause we have reach the end
-            return
+    
+    // MARK: Touches
+    
+    var startTouchX: CGFloat!
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        var t = touches.anyObject() as? UITouch
+        if let touch =  t {
+           var point = touch.locationInView(self)
+            startTouchX = point.x
         }
-        
-        
-        
-        CATransaction.begin()
-        CATransaction.setDisableActions(true)
-        
-        scrollLayer.scrollToPoint(offset)
-        CATransaction.commit()
-        
-        
-        // update the currentPlayingTime
-        var t2 = self.pixelToTime2(cur)
-        if abs( t2 - currentPlayingTimeSec ) >= 0.1 {
-            currentPlayingTime =  CMTimeMakeWithSeconds(Float64(t2), 30)
-        }
-
-        
         
     }
+    
+    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
+        self.handleTouch(touches, sendAction: false)
+
+    }
+    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+        self.handleTouch(touches, sendAction: true)
+
+    }
+    
+    func handleTouch(touches: NSSet, sendAction: Bool) {
+        weakControl.isPlaying = false
+        weakControl.sendActionsForControlEvents(.PlayPauseClicked)
+        
+        var t = touches.anyObject() as? UITouch
+        if let touch =  t {
+            var point = touch.locationInView(self)
+            
+            
+            
+            var offset = scrollLayer.bounds.origin
+            offset.x -= (point.x - startTouchX)
+            
+            
+            
+            
+            
+            
+            var cur = offset.x + CGRectGetMidX(bounds)
+            
+//            println("cur:\(cur)")
+            if  cur >= imagesLayer.totalPixWidth {
+                offset.x = imagesLayer.totalPixWidth - CGRectGetMidX(bounds)
+            }else if cur <= 0.0 {
+                offset.x =  -CGRectGetMidX(bounds)
+            }
+            
+            startTouchX = point.x
+            
+            CATransaction.begin()
+            CATransaction.setDisableActions(true)
+            
+            scrollLayer.scrollToPoint(offset)
+            CATransaction.commit()
+            
+            
+            
+            
+            var t = self.pixelToTime(cur)
+            
+            
+            if sendAction || ( abs(self.currentPlayingTimeSec - Double(CMTimeGetSeconds(t)) ) >= 0.2 ){
+                self.currentPlayingTime =  t
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                    self.weakControl.sendActionsForControlEvents(.ValueChanged)
+                })
+
+
+            }
+            
+            
+        
+        }
+    }
+    
+//    // MARK: Gestures
+//    func handlePan(gesture: UIPanGestureRecognizer){
+//
+//        weakControl.controlFlow = .ViewToController
+//        weakControl.setPlaying(false, sendEvent: true)
+//
+//        
+//        var offset = scrollLayer.bounds.origin
+//        
+////        println("offset x:\(offset.x)")
+//        
+//
+//        
+//        var translation = gesture.translationInView(self)
+//        
+//        offset.x -= translation.x
+//        
+////        println("translation x:\(translation.x)")
+//        
+//        gesture.setTranslation(CGPointZero, inView: self)
+//        
+//        
+////        println("image width:\(imagesLayer.totalPixWidth)")
+//        var cur = offset.x + CGRectGetMidX(bounds)
+//        if  cur >= imagesLayer.totalPixWidth  || cur <= 0.0 {
+//            // Stop animate cause we have reach the end
+//            return
+//        }
+//        
+//        
+//        
+//        
+//        CATransaction.begin()
+//        CATransaction.setDisableActions(true)
+//        
+//        scrollLayer.scrollToPoint(offset)
+//        CATransaction.commit()
+//        
+//        
+//        // update the currentPlayingTime
+//        
+////        println("vel:\(gesture.velocityInView(self))")
+//        
+//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+//            var vel = gesture.velocityInView(self).x
+//            var thredhold = 0.2
+//            if abs(vel) >= 500.0 {
+//                thredhold = 1.0
+//            }else if abs(vel) >= 100 {
+//                thredhold = 0.5
+//            }else {
+//                thredhold = 0.2
+//            }
+//            var t2 = self.pixelToTime2(cur)
+//            if abs( t2 - self.currentPlayingTimeSec ) >= thredhold {
+//                self.currentPlayingTime =  CMTimeMakeWithSeconds(Float64(t2), 30)
+//            }
+//
+//        })
+//        
+//
+//        
+//        
+//    }
     
     // MARK: UI
     
@@ -195,7 +296,10 @@ class SVImagesView: UIView {
         scrollLayer.scrollMode = kCAScrollHorizontally
         scrollLayer.frame = bounds.rectByInsetting(dx: 0.0, dy: 0.0)
         println("scrollFrame: \(scrollLayer.frame)")
-        imagesLayer.frame = bounds // scrollLayer.bounds.rectByInsetting(dx: 0.1, dy: 0.0)
+        var imgframe = bounds
+        imgframe.size.width = 400
+        imagesLayer.frame = imgframe
+        imagesMaskLayer.frame = imgframe
         
         self.drawSplitterLayer()
         
@@ -219,6 +323,12 @@ class SVImagesView: UIView {
         
     }
     
+    
+    func drawMask(start: CMTime, end: CMTime){
+        var s = self.timeToPixel(start)
+        var e = self.timeToPixel(end)
+        imagesMaskLayer.drawRect(s, end: e)
+    }
     
     // MARK: Video
     func getMovieFrame(){
@@ -270,6 +380,8 @@ class SVImagesView: UIView {
         
         var doneCnt = 0
         
+        println("count allTime: \(countElements(allTimes))")
+        
         imageGenerator.generateCGImagesAsynchronouslyForTimes(allTimes, completionHandler: {
             (requestTime, image2, actualTime, result, error) in
             
@@ -282,7 +394,10 @@ class SVImagesView: UIView {
                 
                 if doneCnt >= picCnt {
                     
+                    
+                    
                     dispatch_async(dispatch_get_main_queue(), {
+//                        println("images count:\(self.imagesLayer.images)")
                         self.imagesLayer.drawAllImages()
                     })
                 }
