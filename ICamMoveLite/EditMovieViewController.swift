@@ -13,6 +13,10 @@ import MobileCoreServices
 
 import GPUImage
 
+var sourcePictures = [GPUImagePicture]()
+var filter: GPUImageFilter!
+
+
 class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
     
     // MARK: IBOutlets
@@ -38,8 +42,12 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
     var toEditMovieSize: CGSize!
     
     // MARK: Filters
-    var filter: GPUImageFilter!
-    var sourcePicture: GPUImagePicture!
+//    var filter: GPUImageFilter!
+//    var sourcePicture: GPUImagePicture!
+//    var sourcePicture2: GPUImagePicture!
+//    var sourcePicture3: GPUImagePicture!
+//    var sourcePicture4: GPUImagePicture!
+//    var sourcePicture5: GPUImagePicture!
     var colorGen = GPUImageSolidColorGenerator()
     
     // MARK: Other attriubtes
@@ -57,6 +65,7 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
     var maskShowing: Bool  = true {
         didSet {
             
+            (filter as GPUImageExtendFilter).borderHeight =  maskShowing ? 0.1 : 0
         }
     }
 
@@ -85,7 +94,7 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        colorGen.setColorRed(1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+//        colorGen.setColorRed(1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
         
         toEditMovieURL = Utils.getTestVideo2Url()
@@ -142,11 +151,16 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
         movie2 = GPUImageMovie(playerItem: playerItem)
         movie2.playAtActualSpeed = true
         
-        
-        
-        filter = GPUImageFilter(fragmentShaderFromString: kGPUImagePassthroughFragmentShaderString)
+      
+        if filter == nil {
+            filter = GPUImageFilter(fragmentShaderFromString: kGPUImagePassthroughFragmentShaderString)
+        }
         
         movie2.addTarget(filter)
+        
+        for pic in sourcePictures {
+            pic.addTarget(filter)
+        }
         
         filter.addTarget(self.moviePreview)
         
@@ -181,7 +195,14 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
         super.viewWillDisappear(animated)
         
         isPlaying = false
+
         
+        movie2.removeAllTargets()
+        filter.removeAllTargets()
+        for pic in sourcePictures {
+            pic.removeAllTargets()
+        }
+//
         player.removeTimeObserver(observer)
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
@@ -198,6 +219,7 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
             vc.toEditMovieURL = toEditMovieURL
             vc.toEditMovieType = toEditMovieType
             vc.toEditMovieSize = toEditMovieSize
+//            vc.movie = movie2
         }
     }
     
@@ -258,64 +280,60 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
         var name = filterType.filterFileName
         
         
-        
-        if name == kGPUImagePassthroughFragmentShaderString {
+        switch(name){
+        case kGPUImagePassthroughFragmentShaderString:
             filter = GPUImageFilter(fragmentShaderFromString: kGPUImagePassthroughFragmentShaderString)
             movie2.addTarget(filter)
             filter.addTarget(moviePreview)
+            break;
             
-        }else if name == "amaro_twoinput"{
-//            filter = GPUImageOverlayBlendFilter()
-            filter = GPUImageTwoInputFilter(fragmentShaderFromFile: name)
-            var inputImage = UIImage(named: "mask0")
-            sourcePicture = GPUImagePicture(image: inputImage, smoothlyScaleOutput: true)
-            sourcePicture.processImage()
-            sourcePicture.addTarget(filter)
-            
+        case "test":
+            filter = GPUImageFilter(fragmentShaderFromFile: "test")
             movie2.addTarget(filter)
             filter.addTarget(moviePreview)
-            
-        }else if name == "amaro_twoinput_reverse"{
-
-            filter = GPUImageTwoInputFilter(fragmentShaderFromFile: "amaro_twoinput")
-            var inputImage = UIImage(named: "mask0")
-            sourcePicture = GPUImagePicture(image: inputImage, smoothlyScaleOutput: true)
-            sourcePicture.processImage()
+            break;
             
             
-            movie2.addTarget(filter)
-            sourcePicture.addTarget(filter)
-            filter.addTarget(moviePreview)
-        
-        }else if name == "grayscale_bloodred"{
-            
-            filter = GPUImageFilter(fragmentShaderFromFile: name)
-            
-            tmpFilter = GPUImagePerlinNoiseFilter()
+        default:
             
             
+            var maskCount = 0
+            
+            sourcePictures.removeAll(keepCapacity: false)
+            
+            if let masks = filterType.masks {
+                maskCount = masks.count
+            }
             
             
-            movie2.addTarget(filter)
-            
-            filter.addTarget(tmpFilter)
-            
-            tmpFilter.addTarget(moviePreview)
-            
-            
-
-        }else{
-            filter = GPUImageFilter(fragmentShaderFromFile: name)
-            movie2.addTarget(filter)
-            
-            if filterType.mask  != nil {
-                var image = UIImage(named: filterType.mask!)
-                sourcePicture = GPUImagePicture(image: image, smoothlyScaleOutput: true)
-                sourcePicture.addTarget(filter)
+            if maskCount > 0 {
+                
+                filter = GPUImageMultipleInputFilter(fragmentShaderFromFile: name, textureCount: maskCount+1)
+                movie2.addTarget(filter)
+                
+                
+                for  i in 0...maskCount-1 {
+                    var image = UIImage(named: filterType.masks![i])
+                    var sourcePicture = GPUImagePicture(image: image)
+                    
+                    sourcePictures.append(sourcePicture)
+                    sourcePicture.processImage()
+                    sourcePicture.addTarget(filter)
+                }
+                
+            }else{
+                
+                filter = GPUImageFilter(fragmentShaderFromFile: name)
+                movie2.addTarget(filter)
+                
             }
             
             
             filter.addTarget(moviePreview)
+
+                
+            
+            
         }
         
         
@@ -370,6 +388,11 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
         
         maskShowing = !maskShowing
         
+        if !isPlaying {
+            isPlaying = true
+            isPlaying = false
+            
+        }
     }
     
     

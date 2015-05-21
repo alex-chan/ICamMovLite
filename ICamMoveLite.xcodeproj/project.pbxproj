@@ -18,15 +18,33 @@
 		CB4909E51B0584FF00743DA3 /* SVPlaybackControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4909E41B0584FF00743DA3 /* SVPlaybackControl.swift */; };
 		CB4C41681AFDA54C0065A02A /* SVImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4C41671AFDA54C0065A02A /* SVImagesView.swift */; };
 		CB5121B61AFA59CA00A755AE /* SVImagesLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5121B51AFA59CA00A755AE /* SVImagesLayer.swift */; };
-		CB5255891B046FDB004B8278 /* amaro.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CB5255881B046FDB004B8278 /* amaro.fsh */; };
+		CB5255891B046FDB004B8278 /* amaro_original.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CB5255881B046FDB004B8278 /* amaro_original.fsh */; };
 		CB5255911B048689004B8278 /* amaro_twoinput.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CB5255901B048689004B8278 /* amaro_twoinput.fsh */; };
 		CB5255951B048BF8004B8278 /* mask0.png in Resources */ = {isa = PBXBuildFile; fileRef = CB5255941B048BF8004B8278 /* mask0.png */; };
 		CB52559B1B04999A004B8278 /* mask_test.png in Resources */ = {isa = PBXBuildFile; fileRef = CB52559A1B04999A004B8278 /* mask_test.png */; };
 		CB52559D1B04C79B004B8278 /* grayscale_bloodred.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CB52559C1B04C79B004B8278 /* grayscale_bloodred.fsh */; };
-		CB5255A11B04DD5F004B8278 /* hefe.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CB5255A01B04DD5F004B8278 /* hefe.fsh */; };
-		CB5255A51B04DEB5004B8278 /* hefe.png in Resources */ = {isa = PBXBuildFile; fileRef = CB5255A41B04DEB5004B8278 /* hefe.png */; };
+		CB5255A11B04DD5F004B8278 /* hefe_original.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CB5255A01B04DD5F004B8278 /* hefe_original.fsh */; };
+		CB5255A51B04DEB5004B8278 /* hefe_original.png in Resources */ = {isa = PBXBuildFile; fileRef = CB5255A41B04DEB5004B8278 /* hefe_original.png */; };
+		CB7402C11B09E0CD000375DD /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CB07973A1AF768D300510D5F /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CB9352CF1B0C77AE005C0C1F /* test2.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CB9352CE1B0C77AE005C0C1F /* test2.fsh */; };
+		CB9352D31B0C8462005C0C1F /* 1977.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CB9352D21B0C8462005C0C1F /* 1977.fsh */; };
+		CB9352D51B0C91EE005C0C1F /* early_bird.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CB9352D41B0C91EE005C0C1F /* early_bird.fsh */; };
 		CBB156C11B0325EE00F3B448 /* test.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CBB156C01B0325EE00F3B448 /* test.fsh */; };
-		CBC1069A1AF76AFE006347FD /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CB07973A1AF768D300510D5F /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CBB753851B0DB5DE00CAB171 /* amaro.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CBB753841B0DB5DE00CAB171 /* amaro.fsh */; };
+		CBB753871B0DB88300CAB171 /* branner.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CBB753861B0DB88300CAB171 /* branner.fsh */; };
+		CBB753891B0DBA1B00CAB171 /* hefe.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CBB753881B0DBA1B00CAB171 /* hefe.fsh */; };
+		CBB7538D1B0DBD9200CAB171 /* hudson.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CBB7538C1B0DBD9200CAB171 /* hudson.fsh */; };
+		CBB753941B0DBE9400CAB171 /* lordkelvin.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CBB7538E1B0DBE9400CAB171 /* lordkelvin.fsh */; };
+		CBB753951B0DBE9400CAB171 /* nashville.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CBB7538F1B0DBE9400CAB171 /* nashville.fsh */; };
+		CBB753961B0DBE9400CAB171 /* rise.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CBB753901B0DBE9400CAB171 /* rise.fsh */; };
+		CBB753971B0DBE9400CAB171 /* sierra.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CBB753911B0DBE9400CAB171 /* sierra.fsh */; };
+		CBB753981B0DBE9400CAB171 /* sutro.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CBB753921B0DBE9400CAB171 /* sutro.fsh */; };
+		CBB753991B0DBE9400CAB171 /* lomofi.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CBB753931B0DBE9400CAB171 /* lomofi.fsh */; };
+		CBB7539C1B0DC46200CAB171 /* valencia.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CBB7539A1B0DC46200CAB171 /* valencia.fsh */; };
+		CBB7539D1B0DC46200CAB171 /* toaster.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CBB7539B1B0DC46200CAB171 /* toaster.fsh */; };
+		CBB753A01B0DC58500CAB171 /* walden.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CBB7539E1B0DC58500CAB171 /* walden.fsh */; };
+		CBB753A11B0DC58500CAB171 /* xproii.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CBB7539F1B0DC58500CAB171 /* xproii.fsh */; };
+		CBB753A31B0DCA5100CAB171 /* normal.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CBB753A21B0DCA5100CAB171 /* normal.fsh */; };
 		CBC1069C1AF76E01006347FD /* EditMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC1069B1AF76E01006347FD /* EditMovieViewController.swift */; };
 		CBC1069F1AF76E47006347FD /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC1069D1AF76E47006347FD /* FilterCollectionViewCell.swift */; };
 		CBC106A01AF76E47006347FD /* FilterCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC1069E1AF76E47006347FD /* FilterCollectionViewController.swift */; };
@@ -53,6 +71,8 @@
 		CBC107271AF7817B006347FD /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC107261AF7817B006347FD /* Utils.swift */; };
 		CBC107291AF781AE006347FD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC107281AF781AE006347FD /* AVFoundation.framework */; };
 		CBC1077D1AF7C52C006347FD /* AudioMixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC1077C1AF7C52C006347FD /* AudioMixViewController.swift */; };
+		CBDEBE351B0AC62000483EF1 /* GPUImageTestFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDEBE341B0AC62000483EF1 /* GPUImageTestFilter.swift */; };
+		CBDEBE4C1B0B69D700483EF1 /* inkwell.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CBDEBE4B1B0B69D700483EF1 /* inkwell.fsh */; };
 		CBEF47C31AF8C0D50087762C /* SVControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF47C21AF8C0D50087762C /* SVControlView.swift */; };
 		CBF212C91B005FB100C4FE2B /* test2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CBF212C81B005FB100C4FE2B /* test2.mp4 */; };
 /* End PBXBuildFile section */
@@ -79,7 +99,7 @@
 			remoteGlobalIDString = BCE209E51943F20C002FEED8;
 			remoteInfo = GPUImageFramework;
 		};
-		CB07973B1AF7692500510D5F /* PBXContainerItemProxy */ = {
+		CB7402C21B09E0D9000375DD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CB0797311AF768D300510D5F /* GPUImage.xcodeproj */;
 			proxyType = 1;
@@ -95,7 +115,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CBC1069A1AF76AFE006347FD /* GPUImage.framework in CopyFiles */,
+				CB7402C11B09E0CD000375DD /* GPUImage.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,14 +137,32 @@
 		CB4909E41B0584FF00743DA3 /* SVPlaybackControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SVPlaybackControl.swift; path = SunsetVideoPlayEdit/SVPlaybackControl.swift; sourceTree = "<group>"; };
 		CB4C41671AFDA54C0065A02A /* SVImagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SVImagesView.swift; path = SunsetVideoPlayEdit/SVImagesView.swift; sourceTree = "<group>"; };
 		CB5121B51AFA59CA00A755AE /* SVImagesLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SVImagesLayer.swift; path = SunsetVideoPlayEdit/SVImagesLayer.swift; sourceTree = "<group>"; };
-		CB5255881B046FDB004B8278 /* amaro.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = amaro.fsh; path = Filters/amaro.fsh; sourceTree = "<group>"; };
+		CB5255881B046FDB004B8278 /* amaro_original.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = amaro_original.fsh; path = Filters/amaro_original.fsh; sourceTree = "<group>"; };
 		CB5255901B048689004B8278 /* amaro_twoinput.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = amaro_twoinput.fsh; path = Filters/amaro_twoinput.fsh; sourceTree = "<group>"; };
 		CB5255941B048BF8004B8278 /* mask0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask0.png; sourceTree = "<group>"; };
 		CB52559A1B04999A004B8278 /* mask_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask_test.png; sourceTree = "<group>"; };
 		CB52559C1B04C79B004B8278 /* grayscale_bloodred.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = grayscale_bloodred.fsh; path = Filters/grayscale_bloodred.fsh; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.glsl; };
-		CB5255A01B04DD5F004B8278 /* hefe.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = hefe.fsh; path = Filters/hefe.fsh; sourceTree = "<group>"; };
-		CB5255A41B04DEB5004B8278 /* hefe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hefe.png; sourceTree = "<group>"; };
+		CB5255A01B04DD5F004B8278 /* hefe_original.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = hefe_original.fsh; path = Filters/hefe_original.fsh; sourceTree = "<group>"; };
+		CB5255A41B04DEB5004B8278 /* hefe_original.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hefe_original.png; sourceTree = "<group>"; };
+		CB9352CE1B0C77AE005C0C1F /* test2.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = test2.fsh; path = Filters/test2.fsh; sourceTree = "<group>"; };
+		CB9352D21B0C8462005C0C1F /* 1977.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = 1977.fsh; path = Filters/1977.fsh; sourceTree = "<group>"; };
+		CB9352D41B0C91EE005C0C1F /* early_bird.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = early_bird.fsh; path = Filters/early_bird.fsh; sourceTree = "<group>"; };
 		CBB156C01B0325EE00F3B448 /* test.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = test.fsh; path = Filters/test.fsh; sourceTree = "<group>"; };
+		CBB753841B0DB5DE00CAB171 /* amaro.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = amaro.fsh; path = Filters/amaro.fsh; sourceTree = "<group>"; };
+		CBB753861B0DB88300CAB171 /* branner.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = branner.fsh; path = Filters/branner.fsh; sourceTree = "<group>"; };
+		CBB753881B0DBA1B00CAB171 /* hefe.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = hefe.fsh; path = Filters/hefe.fsh; sourceTree = "<group>"; };
+		CBB7538C1B0DBD9200CAB171 /* hudson.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = hudson.fsh; path = Filters/hudson.fsh; sourceTree = "<group>"; };
+		CBB7538E1B0DBE9400CAB171 /* lordkelvin.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = lordkelvin.fsh; path = Filters/lordkelvin.fsh; sourceTree = "<group>"; };
+		CBB7538F1B0DBE9400CAB171 /* nashville.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = nashville.fsh; path = Filters/nashville.fsh; sourceTree = "<group>"; };
+		CBB753901B0DBE9400CAB171 /* rise.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = rise.fsh; path = Filters/rise.fsh; sourceTree = "<group>"; };
+		CBB753911B0DBE9400CAB171 /* sierra.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = sierra.fsh; path = Filters/sierra.fsh; sourceTree = "<group>"; };
+		CBB753921B0DBE9400CAB171 /* sutro.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = sutro.fsh; path = Filters/sutro.fsh; sourceTree = "<group>"; };
+		CBB753931B0DBE9400CAB171 /* lomofi.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = lomofi.fsh; path = Filters/lomofi.fsh; sourceTree = "<group>"; };
+		CBB7539A1B0DC46200CAB171 /* valencia.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = valencia.fsh; path = Filters/valencia.fsh; sourceTree = "<group>"; };
+		CBB7539B1B0DC46200CAB171 /* toaster.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = toaster.fsh; path = Filters/toaster.fsh; sourceTree = "<group>"; };
+		CBB7539E1B0DC58500CAB171 /* walden.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = walden.fsh; path = Filters/walden.fsh; sourceTree = "<group>"; };
+		CBB7539F1B0DC58500CAB171 /* xproii.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = xproii.fsh; path = Filters/xproii.fsh; sourceTree = "<group>"; };
+		CBB753A21B0DCA5100CAB171 /* normal.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = normal.fsh; path = Filters/normal.fsh; sourceTree = "<group>"; };
 		CBC1069B1AF76E01006347FD /* EditMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditMovieViewController.swift; sourceTree = "<group>"; };
 		CBC1069D1AF76E47006347FD /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		CBC1069E1AF76E47006347FD /* FilterCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +191,8 @@
 		CBC107281AF781AE006347FD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		CBC1072B1AF7823C006347FD /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVOSCloud.framework; path = Frameworks/AVOSCloud.framework; sourceTree = "<group>"; };
 		CBC1077C1AF7C52C006347FD /* AudioMixViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioMixViewController.swift; sourceTree = "<group>"; };
+		CBDEBE341B0AC62000483EF1 /* GPUImageTestFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPUImageTestFilter.swift; sourceTree = "<group>"; };
+		CBDEBE4B1B0B69D700483EF1 /* inkwell.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = inkwell.fsh; path = Filters/inkwell.fsh; sourceTree = "<group>"; };
 		CBEF47C21AF8C0D50087762C /* SVControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SVControlView.swift; path = SunsetVideoPlayEdit/SVControlView.swift; sourceTree = "<group>"; };
 		CBF212C81B005FB100C4FE2B /* test2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test2.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -231,6 +271,7 @@
 		CB07970E1AF766CB00510D5F /* ICamMoveLite */ = {
 			isa = PBXGroup;
 			children = (
+				CB7402B31B09D8AE000375DD /* GPUImageExtend */,
 				CBF212C51B005FA400C4FE2B /* Resourses */,
 				CBEF47BF1AF8C02B0087762C /* SVEditor */,
 				CBC106B31AF7703B006347FD /* Utils */,
@@ -285,14 +326,41 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		CB7402B31B09D8AE000375DD /* GPUImageExtend */ = {
+			isa = PBXGroup;
+			children = (
+				CBDEBE341B0AC62000483EF1 /* GPUImageTestFilter.swift */,
+			);
+			name = GPUImageExtend;
+			sourceTree = "<group>";
+		};
 		CBB156BD1B03259500F3B448 /* Filters */ = {
 			isa = PBXGroup;
 			children = (
+				CBB7539E1B0DC58500CAB171 /* walden.fsh */,
+				CBB7539F1B0DC58500CAB171 /* xproii.fsh */,
+				CBB7539A1B0DC46200CAB171 /* valencia.fsh */,
+				CBB7539B1B0DC46200CAB171 /* toaster.fsh */,
+				CBB7538E1B0DBE9400CAB171 /* lordkelvin.fsh */,
+				CBB7538F1B0DBE9400CAB171 /* nashville.fsh */,
+				CBB753901B0DBE9400CAB171 /* rise.fsh */,
+				CBB753911B0DBE9400CAB171 /* sierra.fsh */,
+				CBB753921B0DBE9400CAB171 /* sutro.fsh */,
+				CBB753931B0DBE9400CAB171 /* lomofi.fsh */,
 				CBB156C01B0325EE00F3B448 /* test.fsh */,
-				CB5255881B046FDB004B8278 /* amaro.fsh */,
+				CB5255881B046FDB004B8278 /* amaro_original.fsh */,
 				CB5255901B048689004B8278 /* amaro_twoinput.fsh */,
 				CB52559C1B04C79B004B8278 /* grayscale_bloodred.fsh */,
-				CB5255A01B04DD5F004B8278 /* hefe.fsh */,
+				CB5255A01B04DD5F004B8278 /* hefe_original.fsh */,
+				CBDEBE4B1B0B69D700483EF1 /* inkwell.fsh */,
+				CB9352CE1B0C77AE005C0C1F /* test2.fsh */,
+				CB9352D21B0C8462005C0C1F /* 1977.fsh */,
+				CB9352D41B0C91EE005C0C1F /* early_bird.fsh */,
+				CBB753841B0DB5DE00CAB171 /* amaro.fsh */,
+				CBB753861B0DB88300CAB171 /* branner.fsh */,
+				CBB753881B0DBA1B00CAB171 /* hefe.fsh */,
+				CBB7538C1B0DBD9200CAB171 /* hudson.fsh */,
+				CBB753A21B0DCA5100CAB171 /* normal.fsh */,
 			);
 			name = Filters;
 			sourceTree = "<group>";
@@ -337,7 +405,7 @@
 			children = (
 				CBB156BD1B03259500F3B448 /* Filters */,
 				CB5255941B048BF8004B8278 /* mask0.png */,
-				CB5255A41B04DEB5004B8278 /* hefe.png */,
+				CB5255A41B04DEB5004B8278 /* hefe_original.png */,
 				CB52559A1B04999A004B8278 /* mask_test.png */,
 				CBF212C81B005FB100C4FE2B /* test2.mp4 */,
 			);
@@ -359,7 +427,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				CB07973C1AF7692500510D5F /* PBXTargetDependency */,
+				CB7402C31B09E0D9000375DD /* PBXTargetDependency */,
 			);
 			name = ICamMoveLite;
 			productName = ICamMoveLite;
@@ -452,16 +520,35 @@
 			files = (
 				CB5255951B048BF8004B8278 /* mask0.png in Resources */,
 				CBC106A21AF76EBD006347FD /* Images.xcassets in Resources */,
+				CB9352CF1B0C77AE005C0C1F /* test2.fsh in Resources */,
+				CBB753971B0DBE9400CAB171 /* sierra.fsh in Resources */,
 				CB0797171AF766CB00510D5F /* Main.storyboard in Resources */,
+				CBB753961B0DBE9400CAB171 /* rise.fsh in Resources */,
+				CBB753A31B0DCA5100CAB171 /* normal.fsh in Resources */,
+				CBB753A11B0DC58500CAB171 /* xproii.fsh in Resources */,
+				CBB753991B0DBE9400CAB171 /* lomofi.fsh in Resources */,
+				CBB753871B0DB88300CAB171 /* branner.fsh in Resources */,
 				CB5255911B048689004B8278 /* amaro_twoinput.fsh in Resources */,
+				CB9352D31B0C8462005C0C1F /* 1977.fsh in Resources */,
+				CBB753951B0DBE9400CAB171 /* nashville.fsh in Resources */,
 				CB52559B1B04999A004B8278 /* mask_test.png in Resources */,
-				CB5255891B046FDB004B8278 /* amaro.fsh in Resources */,
+				CB5255891B046FDB004B8278 /* amaro_original.fsh in Resources */,
+				CBB753891B0DBA1B00CAB171 /* hefe.fsh in Resources */,
 				CBF212C91B005FB100C4FE2B /* test2.mp4 in Resources */,
+				CBB7539C1B0DC46200CAB171 /* valencia.fsh in Resources */,
+				CBB7539D1B0DC46200CAB171 /* toaster.fsh in Resources */,
 				CB07971C1AF766CB00510D5F /* LaunchScreen.xib in Resources */,
+				CB9352D51B0C91EE005C0C1F /* early_bird.fsh in Resources */,
 				CBB156C11B0325EE00F3B448 /* test.fsh in Resources */,
-				CB5255A11B04DD5F004B8278 /* hefe.fsh in Resources */,
+				CBB753A01B0DC58500CAB171 /* walden.fsh in Resources */,
+				CBDEBE4C1B0B69D700483EF1 /* inkwell.fsh in Resources */,
+				CBB7538D1B0DBD9200CAB171 /* hudson.fsh in Resources */,
+				CB5255A11B04DD5F004B8278 /* hefe_original.fsh in Resources */,
 				CB52559D1B04C79B004B8278 /* grayscale_bloodred.fsh in Resources */,
-				CB5255A51B04DEB5004B8278 /* hefe.png in Resources */,
+				CBB753981B0DBE9400CAB171 /* sutro.fsh in Resources */,
+				CBB753941B0DBE9400CAB171 /* lordkelvin.fsh in Resources */,
+				CB5255A51B04DEB5004B8278 /* hefe_original.png in Resources */,
+				CBB753851B0DB5DE00CAB171 /* amaro.fsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +578,7 @@
 				CB4C41681AFDA54C0065A02A /* SVImagesView.swift in Sources */,
 				CB0797141AF766CB00510D5F /* TakeMovieViewController.swift in Sources */,
 				CB00FE641B0190E80071622C /* SVImagesMaskLayer.swift in Sources */,
+				CBDEBE351B0AC62000483EF1 /* GPUImageTestFilter.swift in Sources */,
 				CBC1069F1AF76E47006347FD /* FilterCollectionViewCell.swift in Sources */,
 				CBC106AD1AF76F21006347FD /* MyScrollView.swift in Sources */,
 				CBC106B91AF77056006347FD /* Constants.swift in Sources */,
@@ -519,10 +607,10 @@
 			target = CB07970B1AF766CB00510D5F /* ICamMoveLite */;
 			targetProxy = CB0797221AF766CB00510D5F /* PBXContainerItemProxy */;
 		};
-		CB07973C1AF7692500510D5F /* PBXTargetDependency */ = {
+		CB7402C31B09E0D9000375DD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GPUImageFramework;
-			targetProxy = CB07973B1AF7692500510D5F /* PBXContainerItemProxy */;
+			targetProxy = CB7402C21B09E0D9000375DD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

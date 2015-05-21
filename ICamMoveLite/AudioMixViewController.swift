@@ -79,19 +79,13 @@ class AudioMixViewController: UIViewController {
         
         self.setSessionPlayback()
         
-    }
-    
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        player.removeTimeObserver(observer)
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
         
 
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
         playerItem = AVPlayerItem(URL: toEditMovieURL)
         player = AVPlayer(playerItem: playerItem)
@@ -99,7 +93,7 @@ class AudioMixViewController: UIViewController {
         
         observer = player.addPeriodicTimeObserverForInterval(CMTimeMake(3,30), queue: nil, usingBlock: {
             (t: CMTime) in
-
+            
             self.playbackControl.scrollToTime(t)
             self.playbackControl.playingTime = t
             
@@ -118,7 +112,13 @@ class AudioMixViewController: UIViewController {
         
         
         movie.playAtActualSpeed = true
-        movie.addTarget(self.preview)
+        
+        movie.addTarget(filter)
+        
+        for pic in sourcePictures {
+            pic.addTarget(filter)
+        }
+        filter.addTarget(self.preview)
         
         player.volume = 1.0
         player.play()
@@ -127,12 +127,42 @@ class AudioMixViewController: UIViewController {
         playbackControl.isPlaying = true
         
         movie.startProcessing()
+    }
+    
+
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+
+        
+
         
 
         println("did appear \(playbackControl.bounds)")
         
 
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        movie.removeAllTargets()
+        filter.removeAllTargets()
+        for pic in sourcePictures {
+            pic.removeAllTargets()
+        }
+        player.pause()
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        player.removeTimeObserver(observer)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+
     
     override func shouldAutorotate() -> Bool {
         return false

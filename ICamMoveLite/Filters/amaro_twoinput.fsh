@@ -1,6 +1,7 @@
 precision mediump float;
 uniform sampler2D inputImageTexture;
 uniform sampler2D inputImageTexture2;
+uniform sampler2D inputImageTexture3;
 varying vec2 textureCoordinate;
 const vec3 W = vec3(0.2125, 0.7154, 0.0721);
 

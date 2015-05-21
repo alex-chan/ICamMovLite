@@ -1,52 +1,39 @@
-precision mediump float;
+precision lowp float;
+varying highp vec2 textureCoordinate;
+
 uniform sampler2D inputImageTexture;
-uniform sampler2D inputImageTexture2;
-varying vec2 textureCoordinate;
-const vec3 W = vec3(0.2125, 0.7154, 0.0721);
-
-vec3 BrightnessContrastSaturation(vec3 color, float brt, float con, float sat)
-{
-    vec3 black = vec3(0., 0., 0.);
-    vec3 middle = vec3(0.5, 0.5, 0.5);
-    float luminance = dot(color, W);
-    vec3 gray = vec3(luminance, luminance, luminance);
-    
-    vec3 brtColor = mix(black, color, brt);
-    vec3 conColor = mix(middle, brtColor, con);
-    vec3 satColor = mix(gray, conColor, sat);
-    return satColor;
-}
-
-vec3 ovelayBlender(vec3 Color, vec3 filter){
-    vec3 filter_result;
-    float luminance = dot(filter, W);
-    
-    if(luminance < 0.5)
-        filter_result = 2. * filter * Color;
-    else
-        filter_result = 1. - (1. - (2. *(filter - 0.5)))*(1. - Color);
-    
-    return filter_result;
-}
+uniform sampler2D inputImageTexture2;  //edgeBurn
+uniform sampler2D inputImageTexture3;  //hefeMap
+uniform sampler2D inputImageTexture4;  //hefeGradientMap
+uniform sampler2D inputImageTexture5;  //hefeSoftLight
+uniform sampler2D inputImageTexture6;  //hefeMetal
 
 void main()
-{
-    //get the pixel
-    vec2 st = textureCoordinate.st;
-    vec3 irgb = texture2D(inputImageTexture, st).rgb;
-    vec3 filter = texture2D(inputImageTexture2, st).rgb;
-    
-    //adjust the brightness/contrast/saturation
-    float T_bright = 1.3;
-    float T_contrast = 1.0;
-    float T_saturation = 1.3;
-    vec3 bcs_result = BrightnessContrastSaturation(irgb, T_bright, T_contrast, T_saturation);
-    
-    //more red, less blue
-    vec3 rb_result = vec3(bcs_result.r*1.15, bcs_result.g, bcs_result.b*0.8);
-    
-    //add filter (overlay blending)
-    vec3 after_filter = mix(rb_result, ovelayBlender(rb_result, filter), 0.8);
-    
-    gl_FragColor = vec4(after_filter, 1.);
+{   
+   vec3 texel = texture2D(inputImageTexture, textureCoordinate).rgb;
+   vec3 edge = texture2D(inputImageTexture2, textureCoordinate).rgb;
+   texel = texel * edge;
+
+   texel = vec3(
+                texture2D(inputImageTexture3, vec2(texel.r, .16666)).r,
+                texture2D(inputImageTexture3, vec2(texel.g, .5)).g,
+                texture2D(inputImageTexture3, vec2(texel.b, .83333)).b);
+   
+   vec3 luma = vec3(.30, .59, .11);
+   vec3 gradSample = texture2D(inputImageTexture4, vec2(dot(luma, texel), .5)).rgb;
+   vec3 final = vec3(
+                     texture2D(inputImageTexture5, vec2(gradSample.r, texel.r)).r,
+                     texture2D(inputImageTexture5, vec2(gradSample.g, texel.g)).g,
+                     texture2D(inputImageTexture5, vec2(gradSample.b, texel.b)).b
+                     );
+   
+   vec3 metal = texture2D(inputImageTexture6, textureCoordinate).rgb;
+   vec3 metaled = vec3(
+                       texture2D(inputImageTexture5, vec2(metal.r, texel.r)).r,
+                       texture2D(inputImageTexture5, vec2(metal.g, texel.g)).g,
+                       texture2D(inputImageTexture5, vec2(metal.b, texel.b)).b
+                       );
+   
+   gl_FragColor = vec4(metaled, 1.0);
 }
+
